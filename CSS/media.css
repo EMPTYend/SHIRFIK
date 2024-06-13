@@ -1,5 +1,6 @@
 @media (max-width: 1100px) {
 .card{
+    max-width: 450px;
     width: calc(50% - 15px);
 }
 
