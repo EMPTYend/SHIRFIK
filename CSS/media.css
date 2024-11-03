@@ -1,0 +1,170 @@
+@media (max-width: 1100px) {
+
+.container{
+    max-width: 900px;
+}
+
+.card{
+    max-width: 450px;
+    width: calc(50% - 15px);
+}
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.footer-row{
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-col {
+    margin-bottom: 50px;
+}
+
+.footer-col:first-child {
+    margin-bottom: 0;
+}
+}
+
+@media (max-width: 760px) {
+.header-title{
+    font-size: 32px;
+}
+.header-subtitle{
+    font-size: 14px;
+}
+
+.header nav ul {
+    flex-direction: column; /* Вертикальное расположение элементов на мобильных */
+    display: none; /* Скрыть меню по умолчанию */
+}
+
+.header nav.active ul { /* Отображение меню при активации */
+    display: flex; /* Используем flex для выравнивания */
+}
+
+header nav {
+    display: none; /* Скрыть навигацию */
+}
+
+.burger-menu {
+    display: block; /* Показать бургер-меню */
+}
+
+nav.active {
+    display: block; /* Показываем меню, когда оно активно */
+}
+
+.nav-list {
+    flex-direction: column; /* Вертикальная компоновка на мобильных */
+    display: none; /* Скрыть по умолчанию */
+}
+
+.nav-list li {
+    position: relative;
+    margin: 0; /* Убираем внешние отступы */
+    padding: 0; /* Убираем внутренние отступы, если они не нужны */
+}
+
+nav.active .nav-list {
+    display: flex; /* Показывать меню, когда оно активно */
+}
+
+
+.portfolio{
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.portfolio-header{
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.portfolio-cards-wrapper{
+    justify-content: center;
+}
+
+.card{
+    max-width: 450px;
+    width: 100%;
+}
+
+.card:nth-last-child(2){
+    margin-bottom: 30px;
+}
+
+.card-link{
+    padding: 15px;
+}
+
+.card-img {
+    margin-bottom: 10px;
+    justify-content: center;
+}
+
+.card-title{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card p{
+    font-size: 16px;
+}
+
+.footer-copyright-name {
+    font-size: 24px;
+    margin-bottom: 5px; 
+}
+
+.footer-copyright p {
+    font-size: 14px;    
+}
+
+.footer-icons p{
+    font-size: 22px;
+}
+
+.footer-contacts p{
+    font-size: 22px;
+    margin: 0;
+    margin-top: 15px;
+}
+
+.project{
+    padding: 40px 0 60px;
+}
+
+.project-header{
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.project-img{
+    margin-bottom: 20px;
+}
+
+.project-discription{
+    margin-bottom: 50px; 
+}
+
+.project-btn-back{
+    padding: 0 10px;
+    width: 100%;
+    max-width: 320px;
+}
+}
+
+
+
+@media (max-width: 420px) {
+    .header-title{
+        font-size: 28px;
+    }
+    .header-subtitle{
+        font-size: 10px;
+    }
+    }

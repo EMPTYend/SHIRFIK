@@ -1,0 +1,193 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	list-style: none;
+	text-decoration: none;
+}
+
+:root {
+	--index: calc(1vw + 1vh);
+	--transition: 1.25s cubic-bezier(.2, .6, 0, 1);
+}
+html, body {
+	height: 100%;
+	overflow: hidden;
+}
+
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #ee8002;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 8%;
+	box-shadow: 0 5px 10px #000;
+	z-index: 1000;
+}
+
+header .logo {
+	font-size: 20px;
+	font-weight: 900;
+	color: #000;
+	transition: 0.5s;
+}
+
+header .logo:hover {
+	transform: scale(1.2);
+}
+
+header nav {
+    display: flex; /* Показать меню по умолчанию */
+}
+
+header nav ul {
+    display: flex; /* Используем Flexbox */
+    flex-wrap: wrap; /* Обеспечивает перенос элементов */
+    padding: 0; /* Убираем отступы */
+}
+
+header nav ul li {
+    position: relative;
+    margin: 0 10px; /* Отступы между элементами */
+}
+
+header nav ul li a {
+    padding: 15px;
+    color: #000;
+    font-size: 16px;
+    display: block;
+}
+
+header nav ul li a:hover {
+    background: #000;
+    color: #fff;
+}
+
+nav {
+    position: relative; /* Убедитесь, что родитель имеет позиционирование */
+	display: none;
+}
+
+nav.active {
+    display: flex; /* Показываем навигацию, когда бургер-меню активно */
+    flex-direction: column; /* Вертикальная компоновка */
+}
+
+nav ul {
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем маргины */
+	list-style: none;
+}
+
+nav ul li {
+    position: relative; /* Позволяет абсолютное позиционирование подменю */
+}
+
+nav ul li ul {
+    position: absolute;
+    left: 0 !important;
+	top: 100%;
+    width: 180px;
+	padding: 0 !important;
+    margin: 0 !important;
+    background-color: #fff;
+    display: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 10;
+}
+
+nav ul li ul li {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .1);
+	padding: 10px; /* Добавьте отступы по желанию */
+    box-sizing: border-box;
+}
+
+nav ul li:hover > ul,
+nav ul li.active > ul { /* Добавьте класс .active для мобильного меню */
+    display: block; /* Используйте block для отображения меню */
+}
+
+.burger-menu {
+    display: none; /* Скрыть бургер-меню по умолчанию */
+    cursor: pointer; /* Курсор для бургер-меню */
+	font-size: 24px; /* Размер шрифта для бургер-меню */
+    color: #000;
+}
+
+/* Стили для навигации */
+.nav-list {
+    display: flex; /* Горизонтальное расположение */
+    padding: 0;
+}
+
+.nav-list li {
+    position: relative;
+    margin: 0 0px; /* Отступы между пунктами */
+}
+
+/* Скрыть подменю по умолчанию */
+.sub-menu {
+    display: none; /* Скрываем подменю */
+    position: absolute; /* Обязательно укажите позиционирование */
+    left: 0; /* Устанавливаем его на уровень родителя */
+    top: 100%; /* Позиционирование подменю под родительским элементом */
+    background: #fff; /* Фон подменю */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Убедитесь, что подменю выше других элементов */
+    padding: 0; /* Убираем внутренние отступы */
+    margin: 0; /* Убираем внешние отступы */
+}
+
+/* Показывать подменю при наведении на родительский элемент */
+.nav-list li:hover .sub-menu {
+    display: block; /* Показываем подменю при наведении */
+}
+
+.main-wrapper {
+	height: 100%;
+	display: flex;
+	gap: var(--index);
+	background-image: url(../img/portret/bg.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.slider {
+	transform: rotate(12.5deg);
+	overflow: visible;
+}
+.slider:nth-child(odd) {
+	transform: rotate(192.5deg);
+}
+.slider .slider__wrapper {
+	transition: var(--transition)!important;
+	will-change: transform;
+}
+.slider__item {
+	width: 21vw;
+	margin-bottom: calc(var(--index) * 2.6);
+	cursor: pointer;
+	transition: transform var(--transition);
+	will-change: transform;
+	box-shadow: rgb(0 0 0 / .15) 0 0 30px 10px;
+	justify-content: center; /* Центрируем по горизонтали */
+	display: flex; /* Позволяет использовать flexbox */
+}
+.slider__item:hover {
+	transform: scale(1.04);
+}
+.slider__img {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	border-radius: 8px;
+}
+.slider:nth-child(odd) .slider__img {
+	transform: rotate(-180deg);
+}
